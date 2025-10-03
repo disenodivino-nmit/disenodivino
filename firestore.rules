@@ -1,0 +1,60 @@
+/**
+ * @fileoverview Firestore Security Rules for the Diseño Divino Landing Page.
+ *
+ * Core Philosophy:
+ * This ruleset prioritizes ease of data access for public content (events, team members)
+ * while restricting access to sensitive data (contact messages) to prevent unauthorized access.
+ *
+ * Data Structure:
+ * - /events/{eventId}: Stores publicly accessible event information.
+ * - /team_members/{teamMemberId}: Stores publicly accessible team member information.
+ * - /contact_messages/{contactMessageId}: Stores contact messages, with restricted read/list access.
+ *
+ * Key Security Decisions:
+ * - Public read access is granted to the /events and /team_members collections, assuming all data
+ *   within these collections is intended to be publicly viewable.
+ * - Write access to /contact_messages is public, allowing anyone to submit a contact form.
+ * - Read/List access to /contact_messages is explicitly denied to all users, requiring a backend
+ *   solution or alternative access control mechanism for admins.
+ */
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /**
+     * @description Allows public read access to events.
+     * @path /events/{eventId}
+     * @allow (get, list) Any user can read events.
+     * @deny (create, update, delete) No user can create, update, or delete events via the client.
+     * @principle Allows public read access for displaying event information.
+     */
+    match /events/{eventId} {
+      allow get, list: if true;
+      allow create, update, delete: if false;
+    }
+
+    /**
+     * @description Allows public read access to team members.
+     * @path /team_members/{teamMemberId}
+     * @allow (get, list) Any user can read team members.
+     * @deny (create, update, delete) No user can create, update, or delete team members via the client.
+     * @principle Allows public read access for displaying team member information.
+     */
+    match /team_members/{teamMemberId} {
+      allow get, list: if true;
+      allow create, update, delete: if false;
+    }
+
+    /**
+     * @description Allows anyone to create a contact message, but restricts reading and listing to prevent unauthorized access.
+     * @path /contact_messages/{contactMessageId}
+     * @allow (create) Any user can submit a contact message.
+     * @deny (get, list, update, delete) No user can read, list, update, or delete contact messages via the client.
+     * @principle Restricts read/list access to contact messages while allowing anyone to submit them.
+     */
+    match /contact_messages/{contactMessageId} {
+      allow create: if true;
+      allow get, list, update, delete: if false;
+    }
+  }
+}

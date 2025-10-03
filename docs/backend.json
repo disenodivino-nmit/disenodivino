@@ -1,0 +1,173 @@
+{
+  "entities": {
+    "Event": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Event",
+      "type": "object",
+      "description": "Represents an event showcased on the landing page.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the event."
+        },
+        "title": {
+          "type": "string",
+          "description": "The title of the event."
+        },
+        "description": {
+          "type": "string",
+          "description": "A detailed description of the event."
+        },
+        "date": {
+          "type": "string",
+          "description": "The date and time of the event.",
+          "format": "date-time"
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "URL of the image associated with the event.",
+          "format": "uri"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "description",
+        "date",
+        "imageUrl"
+      ]
+    },
+    "TeamMember": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "TeamMember",
+      "type": "object",
+      "description": "Represents a team member of the Diseño Divino club.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the team member."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the team member."
+        },
+        "bio": {
+          "type": "string",
+          "description": "A brief biography of the team member."
+        },
+        "photoUrl": {
+          "type": "string",
+          "description": "URL of the team member's photo.",
+          "format": "uri"
+        },
+        "role": {
+          "type": "string",
+          "description": "The role of the team member within the club."
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "bio",
+        "photoUrl",
+        "role"
+      ]
+    },
+    "ContactMessage": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "ContactMessage",
+      "type": "object",
+      "description": "Represents a message submitted through the 'Get In Touch' form.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the contact message."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the person submitting the message."
+        },
+        "email": {
+          "type": "string",
+          "description": "The email address of the person submitting the message.",
+          "format": "email"
+        },
+        "message": {
+          "type": "string",
+          "description": "The content of the message."
+        },
+        "timestamp": {
+          "type": "string",
+          "description": "Timestamp of when the message was submitted.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "email",
+        "message",
+        "timestamp"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/events/{eventId}",
+        "definition": {
+          "entityName": "Event",
+          "schema": {
+            "$ref": "#/backend/entities/Event"
+          },
+          "description": "Stores event information for the landing page.  No authorization requirements, public data.",
+          "params": [
+            {
+              "name": "eventId",
+              "description": "Unique identifier for the event."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/team_members/{teamMemberId}",
+        "definition": {
+          "entityName": "TeamMember",
+          "schema": {
+            "$ref": "#/backend/entities/TeamMember"
+          },
+          "description": "Stores team member information for the landing page. No authorization requirements, public data.",
+          "params": [
+            {
+              "name": "teamMemberId",
+              "description": "Unique identifier for the team member."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/contact_messages/{contactMessageId}",
+        "definition": {
+          "entityName": "ContactMessage",
+          "schema": {
+            "$ref": "#/backend/entities/ContactMessage"
+          },
+          "description": "Stores contact messages submitted through the 'Get In Touch' form.  Write access should be public. List/Read should be restricted to admins.",
+          "params": [
+            {
+              "name": "contactMessageId",
+              "description": "Unique identifier for the contact message."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure is designed to manage data for the Diseño Divino Landing Page application, focusing on events, team members, and contact messages. Authorization Independence is achieved by not requiring complex `get()` calls in the security rules. The structure facilitates straightforward security rules and supports efficient data retrieval for the application's features.\n\n*   **Events:** Stored in a top-level `events` collection. This allows for easy listing of all events for the Events Section. The `events` collection does not require any authorization as it will be used to display public information.\n*   **Team Members:** Stored in a top-level `team_members` collection. Similar to events, this allows for easy listing of all team members for the Team Section, and no authorization is required.\n*   **Contact Messages:** Stored in a `contact_messages` collection. This separation ensures that listing messages requires elevated permissions while still allowing anyone to submit a message through the contact form.\n\nThis structure ensures clarity, security, and scalability for the application's data."
+  }
+}
