@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
 import { CustomCursor } from '@/components/custom-cursor';
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -30,6 +32,8 @@ export default function RootLayout({
         >
           <CustomCursor />
           {children}
+          <Analytics/>
+          <SpeedInsights/>
           <Toaster />
         </ThemeProvider>
       </body>
