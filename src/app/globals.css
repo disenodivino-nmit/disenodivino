@@ -65,9 +65,5 @@
   body {
     @apply bg-background text-foreground;
     scroll-behavior: smooth;
-    cursor: none;
-  }
-  a, button, input[type="submit"] {
-    cursor: none;
   }
 }
