@@ -1,32 +1,89 @@
+'use client';
+
 import Image from 'next/image';
 import { getUpcomingEvents, getPastEvents, type ImagePlaceholder } from '@/lib/placeholder-images';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
-import { Calendar } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Calendar, ExternalLink } from 'lucide-react';
+import { useState } from 'react';
 
-const EventCard = ({ event }: { event: ImagePlaceholder }) => (
-  <Card className="overflow-hidden transition-shadow duration-300 hover:shadow-2xl group">
-    <CardHeader className="p-0">
-      <div className="relative h-48 w-full overflow-hidden">
-        <Image
-          src={event.imageUrl}
-          alt={event.description}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-          data-ai-hint={event.imageHint}
-        />
-      </div>
-    </CardHeader>
-    <CardContent className="p-6">
-      <CardTitle className="font-headline text-xl mb-2">{event.title}</CardTitle>
-      <div className="flex items-center text-sm text-muted-foreground">
-        <Calendar className="mr-2 h-4 w-4" />
-        <span>{event.date ? new Date(event.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : 'Date TBD'}</span>
-      </div>
-    </CardContent>
-  </Card>
-);
+const EventCard = ({ event }: { event: ImagePlaceholder }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  
+  return (
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <DialogTrigger asChild>
+        <Card className="overflow-hidden transition-shadow duration-300 hover:shadow-2xl group cursor-pointer">
+          <CardHeader className="p-0">
+            <div className="relative h-48 w-full overflow-hidden">
+              <Image
+                src={event.imageUrl}
+                alt={event.description}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                data-ai-hint={event.imageHint}
+              />
+            </div>
+          </CardHeader>
+          <CardContent className="p-6">
+            <CardTitle className="font-headline text-xl mb-2">{event.title}</CardTitle>
+            <div className="flex items-center text-sm text-muted-foreground">
+              <Calendar className="mr-2 h-4 w-4" />
+              <span>{event.date ? new Date(event.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : 'Date TBD'}</span>
+            </div>
+          </CardContent>
+        </Card>
+      </DialogTrigger>
+      <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
+        <DialogHeader>
+          <DialogTitle className="font-headline text-2xl">{event.title}</DialogTitle>
+          <DialogDescription className="text-base">
+            {event.date && (
+              <div className="flex items-center text-muted-foreground mb-4">
+                <Calendar className="mr-2 h-4 w-4" />
+                <span>{new Date(event.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+              </div>
+            )}
+            {event.description_full && (
+              <p className="text-foreground mb-6">{event.description_full}</p>
+            )}
+            
+            {event.gallery && event.gallery.length > 0 && (
+              <div className="mb-6">
+                <h4 className="font-semibold text-foreground mb-3">Gallery</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {event.gallery.map((imageUrl, index) => (
+                    <div key={index} className="relative h-48 w-full overflow-hidden rounded-lg">
+                      <Image
+                        src={imageUrl}
+                        alt={`${event.title} gallery image ${index + 1}`}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            
+            {event.website && event.category === 'event-upcoming' && (
+              <div className="flex justify-center">
+                <Button asChild className="gap-2">
+                  <a href={event.website} target="_blank" rel="noopener noreferrer">
+                    Know More <ExternalLink className="h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+            )}
+          </DialogDescription>
+        </DialogHeader>
+      </DialogContent>
+    </Dialog>
+  );
+};
 
 export function EventsSection() {
   const upcomingEvents = getUpcomingEvents();

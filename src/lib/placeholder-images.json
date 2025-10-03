@@ -29,39 +29,64 @@
     },
     {
       "id": "event-1",
-      "description": "Promotional image for Neon Nights Workshop",
-      "imageUrl": "https://images.unsplash.com/photo-1639966195692-9303b8344ca3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxhYnN0cmFjdCUyMG5lb258ZW58MHx8fHwxNzU5Mzk4MzYwfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "abstract neon",
+      "description": "Promotional image for NMIT Sparklab 2025",
+      "imageUrl": "https://images.unsplash.com/photo-1642132652859-3ef5a1048fd1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxpbm5vdmF0aW9uJTIwbGFifGVufDB8fHx8MTc1OTM5ODM2MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "innovation lab",
       "category": "event-upcoming",
-      "title": "Neon Nights: 3D Workshop",
-      "date": "2024-10-15"
+      "title": "NMIT Sparklab 2025",
+      "date": "2025-03-15",
+      "description_full": "The flagship event of Diseño Divino, NMIT Sparklab 2025 is an innovation lab where creativity meets technology. Join us for an immersive experience exploring the future of design and innovation.",
+      "website": "https://sparklab.disenodivino.studio",
+      "gallery": [
+        "https://images.unsplash.com/photo-1642132652859-3ef5a1048fd1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxpbm5vdmF0aW9uJTIwbGFifGVufDB8fHx8MTc1OTM5ODM2MHww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1541295669972-43a4f1ba6a38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx0ZWNofGVufDB8fHx8MTc1OTM5ODM2MHww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1551135049-8a33b5883817?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxpbm5vdmF0aW9ufGVufDB8fHx8MTc1OTM5ODM2MHww&ixlib=rb-4.1.0&q=80&w=1080"
+      ]
     },
     {
       "id": "event-2",
-      "description": "Promotional image for Design-a-thon",
-      "imageUrl": "https://images.unsplash.com/photo-1758873269276-9518d0cb4a0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwZW9wbGUlMjBjb2xsYWJvcmF0aW5nfGVufDB8fHx8MTc1OTQxMTExMnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "people collaborating",
-      "category": "event-upcoming",
-      "title": "Annual Design-a-thon",
-      "date": "2024-11-01"
+      "description": "Promotional image for Figma Unplugged",
+      "imageUrl": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxmaWdtYXxlbnwwfHx8fDE3NTk0MTExMTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "design software interface",
+      "category": "event-past",
+      "title": "Figma Unplugged",
+      "date": "2024-06-15",
+      "description_full": "A comprehensive 1-day Figma workshop where participants learned the ins and outs of collaborative design. From basic tools to advanced prototyping, this workshop covered everything needed to master Figma.",
+      "gallery": [
+        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxmaWdtYXxlbnwwfHx8fDE3NTk0MTExMTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx3b3Jrc2hvcHxlbnwwfHx8fDE3NTk0MTExMTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkZXNpZ24lMjB3b3Jrc2hvcHxlbnwwfHx8fDE3NTk0MTExMTJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+      ]
     },
     {
       "id": "event-3",
-      "description": "Promotional image for Guest Speaker Series",
-      "imageUrl": "https://images.unsplash.com/photo-1594122230689-45899d9e6f69?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxsZWN0dXJlJTIwaGFsbHxlbnwwfHx8fDE3NTkzODg4NjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "lecture hall",
+      "description": "Promotional image for Race to Innovate",
+      "imageUrl": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkZXNpZ24lMjB0aGlua2luZ3xlbnwwfHx8fDE3NTkzODg4NjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "design thinking workshop",
       "category": "event-past",
-      "title": "Guest Speaker: The Future of UI",
-      "date": "2024-04-22"
+      "title": "Race to Innovate",
+      "date": "2024-09-20",
+      "description_full": "A high-energy 6-hour problem-solving event as part of NMIT's annual techfest. Teams used design thinking methodologies to tackle real-world challenges and create innovative solutions.",
+      "gallery": [
+        "https://images.unsplash.com/photo-1559136555-9303baea8ebd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkZXNpZ24lMjB0aGlua2luZ3xlbnwwfHx8fDE3NTkzODg4NjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx0ZWFtd29ya3xlbnwwfHx8fDE3NTkzODg4NjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwcm9ibGVtJTIwc29sdmluZ3xlbnwwfHx8fDE3NTkzODg4NjN8MA&ixlib=rb-4.1.0&q=80&w=1080"
+      ]
     },
     {
       "id": "event-4",
-      "description": "Promotional image for Portfolio Review",
-      "imageUrl": "https://images.unsplash.com/photo-1746397545445-f6086889ccc2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxkZXNpZ24lMjBwb3J0Zm9saW98ZW58MHx8fHwxNzU5NDY3NTQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "design portfolio",
+      "description": "Promotional image for UI/UX in Design Thinking Seminar",
+      "imageUrl": "https://images.unsplash.com/photo-1594122230689-45899d9e6f69?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxsZWN0dXJlJTIwaGFsbHxlbnwwfHx8fDE3NTkzODg4NjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "lecture hall",
       "category": "event-past",
-      "title": "Spring Portfolio Review",
-      "date": "2024-05-10"
+      "title": "Seminar on UI/UX in Design Thinking",
+      "date": "2024-04-22",
+      "description_full": "An insightful seminar exploring the intersection of UI/UX design and design thinking methodologies. Industry experts shared their experiences and best practices for creating user-centered design solutions.",
+      "gallery": [
+        "https://images.unsplash.com/photo-1594122230689-45899d9e6f69?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxsZWN0dXJlJTIwaGFsbHxlbnwwfHx8fDE3NTkzODg4NjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1515187029135-18ee286d815b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwcmVzZW50YXRpb258ZW58MHx8fHwxNzU5Mzg4ODYzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhdWRpZW5jZXxlbnwwfHx8fDE3NTkzODg4NjN8MA&ixlib=rb-4.1.0&q=80&w=1080"
+      ]
     }
   ]
 }

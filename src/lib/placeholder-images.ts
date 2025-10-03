@@ -10,9 +10,12 @@ export type ImagePlaceholder = {
   role?: string;
   title?: string;
   date?: string;
+  description_full?: string;
+  website?: string;
+  gallery?: string[];
 };
 
-export const placeholderImages: ImagePlaceholder[] = data.placeholderImages;
+export const placeholderImages: ImagePlaceholder[] = data.placeholderImages as ImagePlaceholder[];
 
 export const getTeamImages = () => {
     return placeholderImages.filter((img) => img.category === 'team');
